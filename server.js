@@ -4,6 +4,7 @@ dotenv.config();
 import express from 'express'
 import { Configuration ,OpenAIApi } from 'openai';
 import cors from 'cors'
+const PORT = process.env.PORT || 5000; 
 
 const app = express();
 app.use(express.json());
@@ -47,6 +48,6 @@ app.post('/', async(req, res) => {
         res.send(error)
     }
 });
-app.listen(5000, () => {
-    console.log("app is listening on 5000 port")
+app.listen(PORT, () => {
+    console.log(`app is listening on ${PORT} port`)
 })
